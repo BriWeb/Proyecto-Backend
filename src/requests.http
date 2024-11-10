@@ -1,0 +1,55 @@
+@api = http://localhost:3000
+
+GET {{api}}/alumnos
+
+###
+POST {{api}}/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Alicia Noemí Roblesssss",
+    "materia_id": 1,
+    "turno_id": 3,
+    "comision": "C",
+    "debe_correlativa": false
+}
+
+
+
+###
+GET {{api}}/alumnos/6
+
+###MONGO DB
+GET {{api}}/alumnos/67219806e260fa28c0f972ae
+
+
+###
+DELETE {{api}}/alumnos/67219806e260fa28c0f972ae
+
+###
+PUT {{api}}/alumnos/6
+Content-Type: application/json
+
+{
+    "nombre": "Alicia Noemí Robleeees",
+    "materia_id": 1,
+    "turno_id": 2,
+    "comision": "C",
+    "debe_correlativa": false
+}
+
+###MONGO DB
+PUT {{api}}/alumnos/67219806e260fa28c0f972ac
+Content-Type: application/json
+
+{
+    "nombre": "Alicia Noemí Roejjjjjjjjs",
+    "materia_id": 1,
+    "turno_id": 2,
+    "comision": "C",
+    "debe_correlativa": false
+}
+
+
+###
+GET {{api}}/alumnosjoin
