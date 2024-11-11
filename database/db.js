@@ -1,7 +1,9 @@
 import {mongoose} from 'mongoose';
 import {db_config} from '../config.js'
 
-const URI = `mongodb+srv://${db_config.user}:${db_config.password}@cluster0.3oyuh.mongodb.net/${db_config.database}?retryWrites=true&w=majority&appName=Cluster0`
+// ${db_config.database}?retryWrites=true&w=majority&appName=Cluster0`;
+const URI = `mongodb+srv://${db_config.user}:${db_config.password}@cluster0.86no8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
 
 export async function connect() {
     try{
@@ -13,4 +15,4 @@ export async function connect() {
     }
 }
 
-//connect()
+// connect();

@@ -1,55 +1,35 @@
 @api = http://localhost:3000
 
-GET {{api}}/alumnos
+GET {{api}}/costos
 
 ###
-POST {{api}}/alumnos
+POST {{api}}/costos
 Content-Type: application/json
 
 {
-    "nombre": "Alicia Noemí Roblesssss",
-    "materia_id": 1,
-    "turno_id": 3,
-    "comision": "C",
-    "debe_correlativa": false
+    "monto": "74999",
+    "categoria": "Electrónica"
 }
 
-
-
 ###
-GET {{api}}/alumnos/6
-
-###MONGO DB
-GET {{api}}/alumnos/67219806e260fa28c0f972ae
-
-
-###
-DELETE {{api}}/alumnos/67219806e260fa28c0f972ae
-
-###
-PUT {{api}}/alumnos/6
+POST {{api}}/costos
 Content-Type: application/json
 
 {
-    "nombre": "Alicia Noemí Robleeees",
-    "materia_id": 1,
-    "turno_id": 2,
-    "comision": "C",
-    "debe_correlativa": false
-}
-
-###MONGO DB
-PUT {{api}}/alumnos/67219806e260fa28c0f972ac
-Content-Type: application/json
-
-{
-    "nombre": "Alicia Noemí Roejjjjjjjjs",
-    "materia_id": 1,
-    "turno_id": 2,
-    "comision": "C",
-    "debe_correlativa": false
+    "monto": "32.000",
+    "categoria": "Entretenimiento"
 }
 
 
 ###
-GET {{api}}/alumnosjoin
+POST {{api}}/costos
+Content-Type: application/json
+
+{
+    "monto": "17.879",
+    "categoria": "Indumentaria"
+}
+
+
+###
+DELETE {{api}}/costos/67328e861861e4b95931c773

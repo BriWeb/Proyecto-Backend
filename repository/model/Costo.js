@@ -2,26 +2,14 @@ import mongoose from 'mongoose';
 
 const costoSchema = mongoose.Schema(
     {
-        nombre: {
+        monto: {
             type: String,
             required: true
         },
-        materia_id: {
+        categoria: {
             type: String,
             required: true
         },
-        turno_id: {
-            type: Number,
-            required: true
-        },
-        comision: {
-            type: String,
-            required: true
-        },
-        debe_correlativa: {
-            type: Boolean,
-            required: true
-        }
     }
 )
 

@@ -28,3 +28,19 @@ export const agregarCostoRepository = async (nuevoCosto) => {
         throw new Error('Error al agregar costo');
     }
 }
+
+export const eliminarCostoRepository = async (id) => {
+
+    try {
+        const costo = await Costos.findByIdAndDelete(id)
+        if(!costo) {
+            console.log('Costo no encontrado');
+        }else {
+            console.log('Se eliminó el siguiente costo de la lista');
+            return costo;
+        }
+    } catch (error) {
+        console.error('Error en el repositorio', error);
+        throw new Error('Error al eliminar el costo de la base de datos');
+    }
+}

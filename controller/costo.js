@@ -1,28 +1,44 @@
-import { agregarCostoService, getCostosService } from "../services/costo.js"
+import { agregarCostoService, getCostosService, eliminarCostoService } from "../services/costo.js"
 
 
 export const getCostosController = async (req, res) => {
     try {
         let costos = await getCostosService();
         if(costos.length === 0) {
-            res.send('La Base de datos está vacía');
+            return res.send('La Base de datos está vacía');
         }
-        res.send(costos);
+        return res.send(costos);
         
     } catch (error) {
         console.error(error);
-        res.status(500).send({ message: 'Error al obtener los costos' });
+        return res.status(500).send({ message: 'Error al obtener los costos' });
     }
 }
 
 export const agregarCostosController = async (req, res) => {
-    const { nombre, materia_id, turno_id, comision, debe_correlativa } = req.body;
+    const costo = req.body;
     try {
-        const costoNuevo = await agregarCostoService({nombre, materia_id, turno_id, comision, debe_correlativa});
-        res.status(200).send({mensaje: 'Costo agregado correctamente', Costo: costoNuevo});
+        const costoNuevo = await agregarCostoService(costo);
+        return res.status(200).send({mensaje: 'Costo agregado correctamente', Costo: costoNuevo});
         
     } catch (error) {
         console.error(error);
-        res.status(500).send({ message: 'Error al agregar el costo' });
+        return res.status(500).send({ message: 'Error al agregar el costo' });
+    }
+}
+
+export const eliminarCostoController = async (req, res) => {
+    const {id}= req.params
+    try {
+        const costoEliminado = await eliminarCostoService(id);
+
+        if(!costoEliminado) {
+            return res.status(404).send({mensaje: `No se encotró ningún costo con ID ${id}`})
+        }
+
+        return res.status(200).send({mensaje: 'El costo ha sido eliminado correctamente', Costo: costoEliminado})
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({mensaje: 'Error al eliminar el costo'})
     }
 }
