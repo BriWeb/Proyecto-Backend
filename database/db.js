@@ -8,7 +8,7 @@ const URI = `mongodb+srv://${db_config.user}:${db_config.password}@${db_config.d
 export async function connect() {
     try{
         await mongoose.connect(URI);
-        console.log("DB MongoDB Conectada correctamente - ")
+        console.log("DB MongoDB Conectada correctamente");
     }catch (error){
         console.log(error);
         process.exit(1);

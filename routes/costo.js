@@ -5,6 +5,6 @@ const router = Router();
 
 router.get('/costos', getCostosController);
 router.post('/costos', agregarCostosController);
-router.delete('/costos/:id', eliminarCostoController)
+router.delete('/costos/:id', eliminarCostoController);
 
 export default router;

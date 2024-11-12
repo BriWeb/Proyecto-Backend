@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { Categoria } from './Categoria.js';
 
 const costoSchema = mongoose.Schema(
     {
@@ -10,6 +11,12 @@ const costoSchema = mongoose.Schema(
             type: String,
             required: true
         },
+        // categoria: {
+        //     type: mongoose.Schema.Types.ObjectId, //este
+        //     type: mongoose.ObjectId, //o este
+        //     ref: 'Categoria',
+        //     required: true
+        // },
     }
 )
 

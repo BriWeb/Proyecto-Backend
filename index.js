@@ -11,5 +11,5 @@ app.use(express.json());
 app.use(costosRoutes);
 
 app.listen(app.get('port'), app.get('host'), () => {
-    console.log(`Servidor corriendo en 'http://${app.get('host')}:${app.get('port')}`)
+    console.log(`Servidor corriendo en 'http://${app.get('host')}:${app.get('port')}`);
 })

@@ -32,7 +32,7 @@ export const agregarCostoRepository = async (nuevoCosto) => {
 export const eliminarCostoRepository = async (id) => {
 
     try {
-        const costo = await Costos.findByIdAndDelete(id)
+        const costo = await Costos.findByIdAndDelete(id);
         if(!costo) {
             console.log('Costo no encontrado');
         }else {
