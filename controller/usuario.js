@@ -56,8 +56,7 @@ export const agregarUsuarioController = async (req, res) => {
 export const editarUsuarioController = async (req, res) => {
     const usuario = req.body;
     const { id } = req.params;
- 
-   
+    
     //Validar si el id es un ObjectId de mongoose de 24 caracteres
     if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).json({ mensaje: 'ID inválido, debe contener 24 caracteres' });

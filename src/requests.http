@@ -20,14 +20,15 @@ Content-Type: application/json
 
 ###
 PUT {{api}}/usuario/6734d0a9d281badbfda1cb2c
-
+Content-Type: application/json
+    
 {
   "nombre": "zara",
-  "email": "cin@gmail.com.ar",
+  "email": "cin@email.com.ar"
 }
 
 ###
-DELETE {{api}}/usuario/673415bdaa6d237f1ea62965
+DELETE {{api}}/usuario/6734d0a9d281badbfda1cb2c
 
 
 ####################################

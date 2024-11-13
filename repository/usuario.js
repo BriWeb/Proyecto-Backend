@@ -49,8 +49,8 @@ export const editarUsuarioRepository = async (id, usuario) => {
         } else {
             console.log('Se editó el usuario: ' + id + 'en la lista');
             console.log(usuarioEditado);            
+            return usuarioEditado;
         }
-        return usuarioEditado;
     } catch (error) {
         console.log('Error en el repositorio', error);
         throw new Error('Error al editar el usuario: ' + id + 'en la base de datos');
