@@ -7,12 +7,23 @@
 GET {{api}}/usuarios
 
 ###
+GET {{api}}/usuario/6734d0a9d281badbfda1cb2c
+
+###
 POST {{api}}/usuario
 Content-Type: application/json
 
 {
-  "nombre": "cinthia",
-  "email": "cin@email.com"
+  "nombre": "karina",
+  "email": "karina@email.com"
+}
+
+###
+PUT {{api}}/usuario/6734d0a9d281badbfda1cb2c
+
+{
+  "nombre": "zara",
+  "email": "cin@gmail.com.ar",
 }
 
 ###
