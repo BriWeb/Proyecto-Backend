@@ -1,4 +1,4 @@
-import { agregarCategoriaService, getCategoriasService, eliminarCategoriaService } from "../services/categoria.js"
+import { agregarCategoriaService, getCategoriasService, eliminarCategoriaService, actualizarCategoriaService } from "../services/categoria.js"
 
 
 export const getCategoriasController = async (req, res) => {
@@ -40,5 +40,19 @@ export const eliminarCategoriaController = async (req, res) => {
     } catch (error) {
         console.error(error);
         return res.status(500).send({mensaje: 'Error al eliminar la categoría'});
+    }
+}
+export const actualizarCategoriaController = async (req,res) => {
+    const {id}= req.params
+    const categoriaActualizada = req.body;
+    try {
+        const categoria = await actualizarCategoriaService(id, categoriaActualizada);
+        if (!categoria) {
+            return res.status(404).send({ mensaje: `No se encontró ninguna categoría con ID ${id}` });
+        } 
+        return res.status(200).send({ mensaje: 'Categoría actualizada correctamente'});  
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({ mensaje: 'Error al actualizar la categoría' });
     }
 }

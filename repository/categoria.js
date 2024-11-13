@@ -44,3 +44,20 @@ export const eliminarCategoriaRepository = async (id) => {
         throw new Error('Error al eliminar el costo de la base de datos');
     }
 }
+
+export const actualizarCatRepository = async (id, cat) => {
+    try {
+        const categoria = await Categoria.findByIdAndUpdate(id, cat, { new: true });
+        
+        if(!cat){
+            console.log('Categoria no encontrada');
+            return null;
+        }else{
+            console.log('Categoria actualizada:', cat);
+            return cat;
+        }
+    } catch (error) {
+        console.error('Error en el repositorio', error);
+        throw new Error('Error al actualizar la categoria de la base de datos');
+    }
+}

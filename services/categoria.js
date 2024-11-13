@@ -1,4 +1,4 @@
-import { agregarCategoriaRepository, getCategoriasRepository, eliminarCategoriaRepository } from "../repository/categoria.js";
+import { agregarCategoriaRepository, getCategoriasRepository, eliminarCategoriaRepository, actualizarCatRepository } from "../repository/categoria.js";
 
 export const getCategoriasService = async () => {
     try {
@@ -30,3 +30,13 @@ export const eliminarCategoriaService = async (id) => {
         throw new Error('Error al eliminar la categoría');
     }
 }
+
+export const actualizarCategoriaService = async (id, categoriaActualizada) => {
+    try {
+        const resultado = await actualizarCatRepository(id, categoriaActualizada, { new: true });
+        return resultado;
+    } catch (error) {
+        console.error('Error en el Repositorio: ', error);
+        throw new Error('Error al actualizar la categoría');
+    }
+};

@@ -107,3 +107,13 @@ Content-Type: application/json
 
 ###
 DELETE {{api}}/categorias/6732957a4b3ec8811973d52f
+
+####
+
+PUT {{api}}/categorias/67341774ee2c1eff76d8e4e4
+Content-Type: application/json
+
+{
+    "nombre": "Entretenimientooooooo",
+    "descripcion": "Artículos de entretenimiento"
+}
