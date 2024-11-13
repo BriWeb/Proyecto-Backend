@@ -33,12 +33,12 @@ export const eliminarCostoController = async (req, res) => {
         const costoEliminado = await eliminarCostoService(id);
 
         if(!costoEliminado) {
-            return res.status(404).send({mensaje: `No se encotró ningún costo con ID ${id}`})
+            return res.status(404).send({mensaje: `No se encotró ningún costo con ID ${id}`});
         }
 
-        return res.status(200).send({mensaje: 'El costo ha sido eliminado correctamente', Costo: costoEliminado})
+        return res.status(200).send({mensaje: 'El costo ha sido eliminado correctamente', Costo: costoEliminado});
     } catch (error) {
         console.error(error);
-        return res.status(500).send({mensaje: 'Error al eliminar el costo'})
+        return res.status(500).send({mensaje: 'Error al eliminar el costo'});
     }
 }

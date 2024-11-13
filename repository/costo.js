@@ -5,7 +5,8 @@ connect();
 
 export const getCostosRepository = async () => {
     try {
-        const costos = await Costos.find();
+        // const costos = await Costos.find();
+        const costos = await Costos.find().populate('categoria');
 
         console.log(costos);
 
@@ -32,7 +33,7 @@ export const agregarCostoRepository = async (nuevoCosto) => {
 export const eliminarCostoRepository = async (id) => {
 
     try {
-        const costo = await Costos.findByIdAndDelete(id)
+        const costo = await Costos.findByIdAndDelete(id);
         if(!costo) {
             console.log('Costo no encontrado');
         }else {

@@ -1,4 +1,4 @@
-import { config } from 'dotenv'
+import { config } from 'dotenv';
 
 config();
 
@@ -15,6 +15,6 @@ const express_config = {
 }
 
 
-export {db_config, express_config}
+export {db_config, express_config};
 
 

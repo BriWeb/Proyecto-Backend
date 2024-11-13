@@ -6,8 +6,14 @@ const costoSchema = mongoose.Schema(
             type: String,
             required: true
         },
+        // categoria: {
+        //     type: String,
+        //     required: true
+        // },
         categoria: {
-            type: String,
+            type: mongoose.Schema.Types.ObjectId, //este
+            // type: mongoose.ObjectId, //o este
+            ref: 'Categoria',
             required: true
         },
     }
