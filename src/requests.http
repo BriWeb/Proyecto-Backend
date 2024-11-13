@@ -107,3 +107,43 @@ Content-Type: application/json
 
 ###
 DELETE {{api}}/categorias/6732957a4b3ec8811973d52f
+
+
+####################################
+##items
+####################################
+
+GET {{api}}/items
+
+###
+POST {{api}}/items
+Content-Type: application/json
+
+{
+    "cantidad": 5,
+    "descripcion": "Artículos de electrónica"
+}
+
+###
+POST {{api}}/items
+Content-Type: application/json
+
+{
+    "cantidad": 20,
+    "descripcion": "Artículos de indumentaria"
+}
+
+
+###
+POST {{api}}/items
+Content-Type: application/json
+
+{
+    "cantidad": 6,
+    "descripcion": "Artículos de entretenimiento"
+}
+
+
+###
+DELETE {{api}}/items/id
+
