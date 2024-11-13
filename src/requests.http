@@ -1,6 +1,29 @@
 @api = http://localhost:3000
 
+
+####################################
+##usuarios
+####################################
+GET {{api}}/usuarios
+
+###
+POST {{api}}/usuario
+Content-Type: application/json
+
+{
+  "nombre": "cinthia",
+  "email": "cin@email.com"
+}
+
+###
+DELETE {{api}}/usuario/673415bdaa6d237f1ea62965
+
+
+####################################
+##costos
+####################################
 GET {{api}}/costos
+
 
 ###
 POST {{api}}/costos
