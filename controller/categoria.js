@@ -42,6 +42,7 @@ export const eliminarCategoriaController = async (req, res) => {
         return res.status(500).send({mensaje: 'Error al eliminar la categoría'});
     }
 }
+
 export const actualizarCategoriaController = async (req,res) => {
     const {id}= req.params
     const categoriaActualizada = req.body;

@@ -1,0 +1,41 @@
+@api = http://localhost:3000
+
+
+####################################
+##presupuestos
+####################################
+
+###
+GET {{api}}/presupuestos
+
+###
+GET {{api}}/presupuesto/673a5773f6bee58fba2cdf48
+
+### 
+POST {{api}}/presupuesto
+Content-Type: application/json
+
+{
+    "usuarioID": "6734d0a9d281badbfda1cb2c",
+    "descripcion": "Presupuesto de prueba",
+    "montoLimite": 1000,
+    "fechaInicio": "2021-09-01",
+    "fechaFin": "2021-09-30",
+    "alerta": true
+}
+
+###
+PUT {{api}}/presupuesto/673a5773f6bee58fba2cdf48
+Content-Type: application/json
+
+{
+    "usuarioID": "6734d0a9d281badbfda1cb2c",
+    "descripcion": "Presupuesto de prueba 2",
+    "montoLimite": 100000,
+    "fechaInicio": "2021-09-01",
+    "fechaFin": "2021-09-30",
+    "alerta": false
+}
+
+###
+DELETE {{api}}/presupuesto/673a5773f6bee58fba2cdf48
