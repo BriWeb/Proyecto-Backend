@@ -108,9 +108,8 @@ Content-Type: application/json
 ###
 DELETE {{api}}/categorias/6732957a4b3ec8811973d52f
 
-<<<<<<< HEAD
-####
 
+###
 PUT {{api}}/categorias/67341774ee2c1eff76d8e4e4
 Content-Type: application/json
 
@@ -118,7 +117,7 @@ Content-Type: application/json
     "nombre": "Entretenimientooooooo",
     "descripcion": "Artículos de entretenimiento"
 }
-=======
+
 
 ####################################
 ##items
@@ -158,4 +157,42 @@ Content-Type: application/json
 ###
 DELETE {{api}}/items/id
 
->>>>>>> juan-items
+
+####################################
+##presupuestos
+####################################
+
+###
+GET {{api}}/presupuestos
+
+###
+GET {{api}}/presupuesto/673a5773f6bee58fba2cdf48
+
+### 
+POST {{api}}/presupuesto
+Content-Type: application/json
+
+{
+    "usuarioID": "6734d0a9d281badbfda1cb2c",
+    "descripcion": "Presupuesto de prueba",
+    "montoLimite": 1000,
+    "fechaInicio": "2021-09-01",
+    "fechaFin": "2021-09-30",
+    "alerta": true
+}
+
+###
+PUT {{api}}/presupuesto/673a5773f6bee58fba2cdf48
+Content-Type: application/json
+
+{
+    "usuarioID": "6734d0a9d281badbfda1cb2c",
+    "descripcion": "Presupuesto de prueba 2",
+    "montoLimite": 100000,
+    "fechaInicio": "2021-09-01",
+    "fechaFin": "2021-09-30",
+    "alerta": false
+}
+
+###
+DELETE {{api}}/presupuesto/673a5773f6bee58fba2cdf48
