@@ -1,0 +1,33 @@
+@api = http://localhost:3000
+
+
+####################################
+##usuarios
+####################################
+
+GET {{api}}/usuarios
+
+###
+GET {{api}}/usuario/673a1c944d90e2bb1dcf06e4
+
+###
+POST {{api}}/usuario
+Content-Type: application/json
+
+{
+  "nombre": "karina",
+  "email": "karina@email.com"
+}
+
+###
+PUT {{api}}/usuario/673a1c944d90e2bb1dcf06e4
+Content-Type: application/json
+    
+{
+  "nombre": "zara",
+  "email": "cin@email.com.ar"
+}
+
+###
+DELETE {{api}}/usuario/673a1a5fc68294682846837c
+

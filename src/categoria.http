@@ -1,0 +1,55 @@
+@api = http://localhost:3000
+
+####################################
+##categoria
+####################################
+
+GET {{api}}/categorias
+
+###
+POST {{api}}/categorias
+Content-Type: application/json
+
+{
+    "nombre": "Electrónica",
+    "descripcion": "Artículos de electrónica"
+}
+
+###
+POST {{api}}/categorias
+Content-Type: application/json
+
+{
+    "nombre": "Fitness",
+    "descripcion": "Artículos de fitness"
+}
+
+###
+POST {{api}}/categorias
+Content-Type: application/json
+
+{
+    "nombre": "Indumentaria",
+    "descripcion": "Artículos de indumentaria"
+}
+
+###
+POST {{api}}/categorias
+Content-Type: application/json
+
+{
+    "nombre": "Entretenimiento",
+    "descripcion": "Artículos de entretenimiento"
+}
+
+###
+DELETE {{api}}/categorias/673a2968d6b1e88680cb8949
+
+####
+PUT {{api}}/categorias/673a2968d6b1e88680cb8949
+Content-Type: application/json
+
+{
+    "nombre": "Entretenimientooooooo",
+    "descripcion": "Artículos de entretenimiento"
+}

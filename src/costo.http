@@ -1,0 +1,41 @@
+@api = http://localhost:3000
+
+
+####################################
+##costos
+####################################
+
+GET {{api}}/costos
+
+###
+POST {{api}}/costos
+Content-Type: application/json
+
+{
+    "cantidad": 3,
+    "items": "673a5b88e2810d6c353fa395",
+    "usuario": "673a1c944d90e2bb1dcf06e4"
+}
+
+###
+POST {{api}}/costos
+Content-Type: application/json
+
+{
+    "cantidad": 5,
+    "items": "673a5b8be2810d6c353fa397",
+    "usuario": "673a5e0820124e9637ba6325"
+}
+
+###
+POST {{api}}/costos
+Content-Type: application/json
+
+{
+    "cantidad": 1,
+    "items": "673a5b8ee2810d6c353fa399",
+    "usuario": "673a5e0820124e9637ba6325"
+}
+
+###
+DELETE {{api}}/costos/6733f8ec234d9020b56fb789

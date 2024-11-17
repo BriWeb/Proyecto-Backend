@@ -1,0 +1,42 @@
+@api = http://localhost:3000
+
+
+####################################
+##items
+####################################
+
+GET {{api}}/items
+
+###
+POST {{api}}/items
+Content-Type: application/json
+
+{
+    "descripcion": "Smart TV",
+    "categoria": "6733f85f234d9020b56fb775",
+    "valor": 280000
+}
+
+###
+POST {{api}}/items
+Content-Type: application/json
+
+{
+    "descripcion": "Jogging",
+    "categoria": "6733f86d234d9020b56fb778",
+    "valor": 45500
+}
+
+###
+POST {{api}}/items
+Content-Type: application/json
+
+{
+    "descripcion": "Mancuerna",
+    "categoria": "673a4c194325cd1b8a4ea4f1",
+    "valor": 20000
+}
+
+###
+DELETE {{api}}/items/673a5b60e2810d6c353fa381
+

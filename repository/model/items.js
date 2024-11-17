@@ -1,15 +1,19 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const itemsSchema = mongoose.Schema(
-    {
-         cantidad: {
-         type: Number,
-          required: true
-         },
-          descripcion: { 
-         type: String,
-         required: true
-         }
+const itemsSchema = mongoose.Schema({
+  descripcion: {
+    type: String,
+    required: true,
+  },
+  categoria: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Categoria",
+    required: true,
+  },
+  valor: {
+    type: Number,
+    required: true,
+  },
 });
 
-export const Items = mongoose.model('Items', itemsSchema);
+export const Items = mongoose.model("Items", itemsSchema);
