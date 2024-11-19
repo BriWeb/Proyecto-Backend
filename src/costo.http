@@ -7,7 +7,7 @@
 
 GET {{api}}/costos
 ###
-GET {{api}}/costos/usuario/673c8295cde02e82b9b30e31
+GET {{api}}/costos/usuario/673a5e0820124e9637ba6325
 
 ###
 POST {{api}}/costos

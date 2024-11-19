@@ -1,7 +1,9 @@
 import { mongoose } from "mongoose";
 import { db_config } from "../config.js";
 
-const URI = `mongodb+srv://${db_config.user}:${db_config.password}@${db_config.database}.c7blv.mongodb.net/?retryWrites=true&w=majority&appName=${db_config.database}`;
+// 86no8
+// c7blv
+const URI = `mongodb+srv://${db_config.user}:${db_config.password}@${db_config.database}.86no8.mongodb.net/?retryWrites=true&w=majority&appName=${db_config.database}`;
 export async function connect() {
   try {
     await mongoose.connect(URI);
