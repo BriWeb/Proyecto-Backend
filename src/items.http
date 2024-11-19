@@ -8,6 +8,9 @@
 GET {{api}}/items
 
 ###
+GET {{api}}/item/673533410ce0faef596a420e
+
+###
 POST {{api}}/items
 Content-Type: application/json
 
@@ -32,11 +35,22 @@ POST {{api}}/items
 Content-Type: application/json
 
 {
-    "descripcion": "Mancuerna",
-    "categoria": "673a4c194325cd1b8a4ea4f1",
+    "descripcion": "Colchonetas",
+    "categoria": "673c676056eda5d62933249d",
     "valor": 20000
 }
 
+
 ###
-DELETE {{api}}/items/673a5b60e2810d6c353fa381
+PUT {{api}}/item/673c5d5b7af58e71a8f7d9d9
+Content-Type: application/json
+
+{
+    "descripcion": "Kit Karaoke",
+    "categoria": "6734eeb06809872e0848cb69",
+    "valor": 1000
+}
+
+###
+DELETE {{api}}/items/673c5d517af58e71a8f7d9d7
 

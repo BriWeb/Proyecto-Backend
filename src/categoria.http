@@ -5,6 +5,8 @@
 ####################################
 
 GET {{api}}/categorias
+###
+GET {{api}}/categoria/673c676056eda5d62933249d
 
 ###
 POST {{api}}/categorias
@@ -42,14 +44,16 @@ Content-Type: application/json
     "descripcion": "Artículos de entretenimiento"
 }
 
-###
-DELETE {{api}}/categorias/673a2968d6b1e88680cb8949
-
 ####
-PUT {{api}}/categorias/673a2968d6b1e88680cb8949
+PUT {{api}}/categorias/673c676056eda5d62933249d
 Content-Type: application/json
 
 {
-    "nombre": "Entretenimientooooooo",
-    "descripcion": "Artículos de entretenimiento"
+    "nombre": "Fitness",
+    "descripcion": "Artículos de fitne"
 }
+
+###
+DELETE {{api}}/categorias/673c676056eda5d62933249d
+
+

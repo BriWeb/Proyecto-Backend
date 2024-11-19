@@ -1,10 +1,11 @@
 import { Costos } from "./model/Costo.js";
 import { Items } from "./model/items.js";
-
 import { connect } from "../database/db.js";
+import mongoose from "mongoose";
 
 connect();
 
+//Obtener todos los costos
 export const getCostosRepository = async () => {
   try {
     const costos = await Costos.find()
@@ -18,9 +19,33 @@ export const getCostosRepository = async () => {
 
     console.log(costos);
 
-    console.log(costos);
-
     return costos;
+  } catch (error) {
+    console.error("Error en el Repositorio: ", error);
+    throw new Error("Error en la consulta a la base de datos");
+  }
+};
+
+
+//Obtener costos por usuario
+export const getCostosUsuarioRepository = async (id) => {
+  try {
+    //Validar que el ID del usuario sea válido
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      throw new Error("El ID del usuario no es válido");
+    }
+    //Convertir usuarioId a ObjectId
+    const costosUsuario = await Costos.find({ usuario: new mongoose.Types.ObjectId(id) })
+      .populate("usuario")
+      .populate({
+        path: "items",
+        populate: {
+          path: "categoria",
+        },
+      });
+    console.log("Costos filtrados por usuario:", costosUsuario);
+    return costosUsuario;
+
   } catch (error) {
     console.error("Error en el Repositorio: ", error);
     throw new Error("Error en la consulta a la base de datos");
