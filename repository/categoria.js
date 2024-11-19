@@ -3,6 +3,7 @@ import { connect } from "../database/db.js";
 
 connect();
 
+//Obtener todas las categorías
 export const getCategoriasRepository = async () => {
   try {
     const categoria = await Categoria.find();
@@ -13,6 +14,24 @@ export const getCategoriasRepository = async () => {
   }
 };
 
+//Obtener una categoría por ID
+export const getCategoriaByIdRepository = async (id) => {
+  try {
+    const categoria = await Categoria.findById(id);
+    if (!categoria) {
+      console.log("Categoría no encontrada");
+      return null;
+    } else {
+      console.log("Categoría encontrada:", categoria);
+      return categoria;
+    }
+  } catch (error) {
+    console.error("Error en el Repositorio: ", error);
+    throw new Error("Error al consultar la base de datos");
+  }
+};
+
+//Agregar una categoría
 export const agregarCategoriaRepository = async (nuevaCategoria) => {
   try {
     const categoriaNueva = new Categoria(nuevaCategoria);
@@ -24,6 +43,7 @@ export const agregarCategoriaRepository = async (nuevaCategoria) => {
   }
 };
 
+//Eliminar una categoría
 export const eliminarCategoriaRepository = async (id) => {
   try {
     const categoria = await Categoria.findByIdAndDelete(id);
@@ -39,6 +59,7 @@ export const eliminarCategoriaRepository = async (id) => {
   }
 };
 
+//Actualizar una categoría
 export const actualizarCatRepository = async (id, cat) => {
   try {
     const categoria = await Categoria.findByIdAndUpdate(id, cat, { new: true });

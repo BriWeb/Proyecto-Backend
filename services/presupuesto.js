@@ -14,7 +14,7 @@ export const getPresupuestosService = async () => {
 //Obtener presupuesto por id
 export const getPresupuestoByIdService = async (id) => {
     try {
-        return getPresupuestoByIdRepository(id);
+        return await getPresupuestoByIdRepository(id);
     } catch (error) {
         console.log('Error en el servicio', error);
         throw new Error('Error al obtener el presupuesto id: ' + id);

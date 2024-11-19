@@ -3,6 +3,7 @@ import { connect } from "../database/db.js";
 
 connect();
 
+//Obtener todos los items
 export const getItemsRepository = async () => {
   try {
     // const items = await Items.find();
@@ -15,6 +16,21 @@ export const getItemsRepository = async () => {
   }
 };
 
+//Obtener item por id
+export const getItemByIdRepository = async (id) => {
+  try {
+    const item = await Items.findById(id);
+    return item;
+  } catch (error) {
+    console.log("Error en el Repositorio: ", error);
+    throw new Error(
+      "Error al consultar el item id: " + id + "en la base de datos"
+    );
+  }
+};
+
+
+//Agregar un item
 export const agregarItemRepository = async (nuevoItem) => {
   try {
     const itemNuevo = new Items(nuevoItem);
@@ -27,6 +43,20 @@ export const agregarItemRepository = async (nuevoItem) => {
   }
 };
 
+//Editar un item
+export const editarItemRepository = async (id, item) => {
+  try {
+    return await Items.findByIdAndUpdate(id, item, {
+      new: true,
+    });
+  } catch (error) {
+    console.error("Error en el Repositorio: ", error);
+    throw new Error("Error al editar el item en la base de datos");    
+  }
+};
+
+
+//Eliminar un item
 export const eliminarItemRepository = async (id) => {
   try {
     const item = await Items.findByIdAndDelete(id);
@@ -43,14 +73,4 @@ export const eliminarItemRepository = async (id) => {
   }
 };
 
-export const getItemByIdRepository = async (id) => {
-  try {
-    const item = await Items.findById(id);
-    return item;
-  } catch (error) {
-    console.log("Error en el Repositorio: ", error);
-    throw new Error(
-      "Error al consultar el item id: " + id + "en la base de datos"
-    );
-  }
-};
+

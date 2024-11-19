@@ -6,15 +6,17 @@
 ####################################
 
 GET {{api}}/costos
+###
+GET {{api}}/costos/usuario/673c8295cde02e82b9b30e31
 
 ###
 POST {{api}}/costos
 Content-Type: application/json
 
 {
-    "cantidad": 3,
-    "items": "673a5b88e2810d6c353fa395",
-    "usuario": "673a1c944d90e2bb1dcf06e4"
+    "cantidad": 2,
+    "items": "673c5d5b7af58e71a8f7d9d9",
+    "usuario": "673c8295cde02e82b9b30e31"
 }
 
 ###
@@ -38,4 +40,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE {{api}}/costos/6733f8ec234d9020b56fb789
+DELETE {{api}}/costos/673c94f7a134ce81cbcd19d9

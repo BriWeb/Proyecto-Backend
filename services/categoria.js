@@ -1,5 +1,6 @@
-import { agregarCategoriaRepository, getCategoriasRepository, eliminarCategoriaRepository, actualizarCatRepository } from "../repository/categoria.js";
+import { getCategoriasRepository, getCategoriaByIdRepository, agregarCategoriaRepository, eliminarCategoriaRepository, actualizarCatRepository } from "../repository/categoria.js";
 
+//Obtener todas las categorías
 export const getCategoriasService = async () => {
     try {
         return getCategoriasRepository();
@@ -9,6 +10,18 @@ export const getCategoriasService = async () => {
     }
 }
 
+//Obtener una categoría por ID
+export const getCategoriaByIdService = async (id) => {
+    try {
+        const categoria = await getCategoriaByIdRepository(id);
+        return categoria;
+    } catch (error) {
+        console.error('Error en el Servicio: ', error);
+        throw new Error('Error al obtener la categoría');
+    }
+};
+
+//Agregar una categoría
 export const agregarCategoriaService = async (categoria) => {
     try {
         const categoriaNueva = await agregarCategoriaRepository(categoria);
@@ -20,6 +33,7 @@ export const agregarCategoriaService = async (categoria) => {
     }
 }
 
+//Eliminar una categoría
 export const eliminarCategoriaService = async (id) => {
     try {
         const categoriaEliminada = await eliminarCategoriaRepository(id);
@@ -31,6 +45,7 @@ export const eliminarCategoriaService = async (id) => {
     }
 }
 
+//Actualizar una categoría
 export const actualizarCategoriaService = async (id, categoriaActualizada) => {
     try {
         const resultado = await actualizarCatRepository(id, categoriaActualizada, { new: true });
